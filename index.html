@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>PINGAKSH PRODUCTION | SINGLE SOLUTION FOR WEDDING | SOCIAL MEDIA</title>
+  <title>Pingkash Production - Delhi's Favourite Wedding Videography & Event Covering</title>
 
   <link href="assets/img/logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -26,10 +26,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="google-site-verification" content="HtMGd8fSex0skH4sLaqMSeAa4zy964YY5k64ETG9vrU" />
   <meta
-    content="Pingkash Production is a one-stop answer for Luxury Wedding & Pre Wedding Photography, Videography, Social Media Video Production, Event Covering and many more"
+    content="Pingkash Production is a one-stop answer for Luxury Wedding & Pre Wedding Photography, Videography and many more"
     name="description" />
   <meta
-    content="pingaksh, pingaksh production, pingaksh wedding, wedding, Wedding photoshoot, pre wedding, prewedding, photography, socialmediapost, socialmedia post handling, social media video production, event covering"
+    content="Find videographer for wedding, best wedding videography, Wedding Photographer in Delhi, Wedding Videographer in Delhi, Best Wedding Photography in Delhi, Top Wedding Videography Services Delhi, Professional Wedding Photographer Delhi, Candid Wedding Photography Delhi, Destination Wedding Photographer Delhi, Affordable Wedding Videography Delhi, Pre-Wedding Photographer Delhi, Delhi Wedding Cinematography, Creative Wedding Photography Delhi, Indian Wedding Photographer in Delhi, Traditional Wedding Photography Delhi, Outdoor Wedding Videography Delhi, Delhi Wedding Photo Shoot, Engagement Photography Delhi, Hindu Wedding Photography Delhi, Muslim Wedding Videographer Delhi, Sikh Wedding Photographer Delhi, Christian Wedding Videography Delhi"
     name="keywords" />
 
   <meta property="og:title"
@@ -66,7 +66,6 @@
         <img style="border-radius: 60px;" src="assets/img/logo.jpg" width="90" height="90" alt="">
       </a>
       <h1 class="logo"><a href="#">PINGAKSH PRODUCTION</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -77,10 +76,10 @@
           <li><a class="nav-link scrollto" href="#contact">Find Us</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -384,28 +383,66 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="myform" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="text" class="form-control" name="Mobile" id="mobile" placeholder="Mobile Number">
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="Service" id="service"
+                  placeholder="What service do you need?">
               </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
+
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div>
+                <h2 style="font-size: larger;">
+                  Stucking in choosing best videographer for your Wedding? <b>Don't Worry</b> just fill in the above
+                  details, and leave everything on us!</h2>
+              </div>
+              <div class="text-center"><button type="submit" onclick="submitForm()">Send Message</button></div>
             </form>
+            <script>
+              function submitForm(event) {
+                var formData = new FormData(document.getElementById("myform"));
+
+                // Send the form data to the server using AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://script.google.com/macros/s/AKfycby4yueR-z-wWW9YZbzRVf_wBamXc0t9YucPJ2vvxhJ5ulKey9s3oawX3QpKLvjk0ydAUw/exec", true);
+                xhr.onload = function () {
+                  if (xhr.status === 200) {
+                    // Handle a successful response
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.result === "success") {
+                      // Show a success message
+                      document.querySelector(".sent-message").style.display = "block";
+                    } else {
+                      // Show an error message
+                      document.querySelector(".error-message").textContent = response.error;
+                      document.querySelector(".error-message").style.display = "block";
+                    }
+                  } else {
+                    // Handle an error
+                    console.error("Error:", xhr.statusText);
+                  }
+                  document.querySelector(".loading").style.display = "none";
+                };
+                xhr.onerror = function () {
+                  // Handle a network error
+                  console.error("Network Error");
+                  document.querySelector(".loading").style.display = "none";
+                };
+                xhr.send(formData);
+                document.querySelector(".loading").style.display = "block";
+              }
+            </script>
 
           </div>
 
@@ -426,11 +463,11 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>PINGAKSH PRODUCTION</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Dwarka Sec-15<br>
+              Old Palam Road<br>
+              Delhi<br><br>
+              <strong>Phone:</strong> +91 8178891333<br>
+              <strong>Email:</strong> pingakshproduction@gmail.com<br>
             </p>
           </div>
 
@@ -496,7 +533,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
