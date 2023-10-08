@@ -2,7 +2,7 @@ window.onload = function () {
     getCurrentLocation();
 };
 function getCurrentLocation() {
-    fetch("http://ip-api.com/json")
+    fetch("https://ipinfo.io/json")
         .then(response => response.json())
         .then(data => {
             var city = data.city;
