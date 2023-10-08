@@ -6,7 +6,7 @@ function getCurrentLocation() {
         .then(response => response.json())
         .then(data => {
             var city = data.city;
-            var state = data.regionName;
+            var state = data.region;
             var country = data.country;
 
             document.getElementById("city").value = city;
