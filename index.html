@@ -22,6 +22,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="assets/js/script.js"></script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="google-site-verification" content="HtMGd8fSex0skH4sLaqMSeAa4zy964YY5k64ETG9vrU" />
@@ -383,7 +384,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form id="myform" class="php-email-form">
+            <form id="myform" action="#" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" required>
@@ -396,6 +397,10 @@
                 <input type="text" class="form-control" name="Service" id="service"
                   placeholder="What service do you need?">
               </div>
+              <input type="hidden" name="City" id="city">
+              <input type="hidden" name="State" id="state">
+              <input type="hidden" name="Country" id="country">
+
 
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -405,44 +410,10 @@
               <div>
                 <h2 style="font-size: larger;">
                   Stucking in choosing best videographer for your Wedding? <b>Don't Worry</b> just fill in the above
-                  details, and leave everything on us!</h2>
+                  details, and we will explain you <b>everything</b> and help you to choose the best.. </h2>
               </div>
-              <div class="text-center"><button type="submit" onclick="submitForm()">Send Message</button></div>
+              <div class="text-center"><button type="button" onclick="submitForm()">Send Message</button></div>
             </form>
-            <script>
-              function submitForm(event) {
-                var formData = new FormData(document.getElementById("myform"));
-
-                // Send the form data to the server using AJAX
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "https://script.google.com/macros/s/AKfycby4yueR-z-wWW9YZbzRVf_wBamXc0t9YucPJ2vvxhJ5ulKey9s3oawX3QpKLvjk0ydAUw/exec", true);
-                xhr.onload = function () {
-                  if (xhr.status === 200) {
-                    // Handle a successful response
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.result === "success") {
-                      // Show a success message
-                      document.querySelector(".sent-message").style.display = "block";
-                    } else {
-                      // Show an error message
-                      document.querySelector(".error-message").textContent = response.error;
-                      document.querySelector(".error-message").style.display = "block";
-                    }
-                  } else {
-                    // Handle an error
-                    console.error("Error:", xhr.statusText);
-                  }
-                  document.querySelector(".loading").style.display = "none";
-                };
-                xhr.onerror = function () {
-                  // Handle a network error
-                  console.error("Network Error");
-                  document.querySelector(".loading").style.display = "none";
-                };
-                xhr.send(formData);
-                document.querySelector(".loading").style.display = "block";
-              }
-            </script>
 
           </div>
 
@@ -490,14 +461,14 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Video Production</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Designing</a></li>
             </ul>
-          </div>
+          </div>  
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Get all the updates regarding our new and latest offers or services..</p>
-            <form action="" method="post">
+            <h4>Follow us on Instagram</h4>
+            <p>Checkout our Instagram to see our collections and what we offer..</p>
+            <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            </form> -->
           </div>
 
         </div>
@@ -512,11 +483,11 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
       </div>
     </div>
   </footer><!-- End Footer -->
